@@ -22,12 +22,14 @@ export default class KeyboardAccessoryView extends Component {
     revealKeyboardInteractive: React.PropTypes.bool,
     manageScrollView: React.PropTypes.bool,
     requiresSameParentToManageScrollView: React.PropTypes.bool,
+    viewIsInsideTabBar: React.PropTypes.bool,
   };
   static defaultProps = {
     iOSScrollBehavior: -1,
     revealKeyboardInteractive: false,
     manageScrollView: true,
     requiresSameParentToManageScrollView: false,
+    viewIsInsideTabBar: false
   };
 
   constructor(props) {
@@ -112,7 +114,7 @@ export default class KeyboardAccessoryView extends Component {
     return (
       <KeyboardTrackingView
         style={styles.trackingToolbarContainer}
-        viewIsInsideTabBar={true}
+        viewIsInsideTabBar={this.props.viewIsInsideTabBar}
         onLayout={this.onContainerComponentHeightChanged}
         scrollBehavior={this.getIOSTrackingScrollBehavior()}
         revealKeyboardInteractive={this.props.revealKeyboardInteractive}
