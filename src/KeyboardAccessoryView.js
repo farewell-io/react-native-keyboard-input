@@ -112,6 +112,7 @@ export default class KeyboardAccessoryView extends Component {
     return (
       <KeyboardTrackingView
         style={styles.trackingToolbarContainer}
+        viewIsInsideTabBar={true}
         onLayout={this.onContainerComponentHeightChanged}
         scrollBehavior={this.getIOSTrackingScrollBehavior()}
         revealKeyboardInteractive={this.props.revealKeyboardInteractive}
